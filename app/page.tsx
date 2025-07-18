@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -24,11 +26,11 @@ import MobileNav from "@/components/mobile-nav"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <AosInit />
 
       {/* Header & Navigation */}
-      <header className="sticky top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
+      <header className="fixed top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
         <div className="container flex h-16 items-center justify-between">
           <Link href="#home" className="flex items-center gap-2">
             <span className="text-xl font-bold text-[#682bd7]">RightTax</span>
@@ -62,13 +64,13 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 overflow-x-hidden pt-16">
         {/* Home Section */}
         <section id="home" className="bg-[#F5F1E3] py-20">
           <div className="container grid gap-8 md:grid-cols-2 items-center">
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=500&width=500"
+                src="/tax-consultation-services.jpg"
                 alt="Tax consultation services"
                 fill
                 className="object-cover"
@@ -76,15 +78,20 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-                <span className="text-[#2E073F] hover:text-[#682bd7] transition-colors">TAILORED TAX</span>
-                <br />
-                <span className="text-[#682bd7] hover:text-[#3D8F6A] transition-colors">SOLUTION</span>
-              </h1>
+                        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+            <span className="text-[#2E073F] hover:text-[#682bd7] transition-colors hover:scale-110 transition-transform duration-300 overflow-hidden">TAILORED TAX</span>
+            <br />
+            <span className="text-[#682bd7] hover:text-[#3D8F6A] transition-colors hover:scale-110 transition-transform duration-300 overflow-hidden">SOLUTION</span>
+          </h1>
               <p className="text-lg text-gray-700">
                 Professional tax consultation services tailored to your unique financial situation.
               </p>
-              <Button className="bg-[#3D8F6A] hover:bg-[#2D6A4F] text-white">
+              <Button 
+                className="bg-[#3D8F6A] hover:bg-[#2D6A4F] text-white"
+                onClick={() => {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Get Started <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
@@ -94,7 +101,7 @@ export default function Home() {
         {/* Services Section */}
         <section id="services" className="bg-[#682bd7] py-20">
           <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-[#F5F1E3]">What we Do</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-[#F5F1E3] hover:scale-110 transition-transform duration-300 overflow-hidden">What we Do</h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {[
                 {
@@ -152,30 +159,32 @@ export default function Home() {
         {/* Why Us Section */}
         <section id="why-us" className="bg-[#F5F1E3] py-20">
           <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-[#2E073F] hover:scale-120 transition-transform">
+            <h2 className="text-4xl font-bold text-center mb-12 text-[#2E073F] hover:scale-110 transition-transform duration-300 overflow-hidden">
               Why Us
             </h2>
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/tax-professionals-at-work.jpg"
                   alt="Tax professionals at work"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="space-y-6 group">
-                <h3 className="text-2xl font-bold text-[#682bd7]">Your path to tax empowerment</h3>
-                <p className="text-[#2E073F] group-hover:scale-110 transition-transform duration-300">
+              <div className="space-y-6">
+                <div className="overflow-hidden">
+                  <h3 className="text-2xl font-bold text-[#682bd7]">Your path to tax empowerment</h3>
+                </div>
+                <p className="text-[#2E073F]">
                   RightTax is a tax consultation service founded by experienced tax professionals. We aim to simplify
                   complex tax laws and procedures, empowering individuals and businesses to make informed financial
                   decisions.
                 </p>
-                <p className="text-[#2E073F] group-hover:scale-110 transition-transform duration-300">
+                <p className="text-[#2E073F]">
                   RightTax offers clear, accurate, and practical tax solutions through a single platform, enabling users
                   to get answers, understand procedures, and receive tailored expert advice.
                 </p>
-                <p className="text-[#2E073F] group-hover:scale-110 transition-transform duration-300">
+                <p className="text-[#2E073F]">
                   Tax systems are meant to be Progressive rather than Regressive, Our Team is committed to educating
                   people, resolving tax issues efficiently, and continuously improving their services.
                 </p>
@@ -187,7 +196,7 @@ export default function Home() {
         {/* Quote Section */}
         <section id="quote" className="bg-[#2E073F] py-16">
           <div className="container text-center">
-            <blockquote className="text-2xl md:text-3xl font-medium text-[#F5F1E3] max-w-3xl mx-auto hover:scale-110 transition-transform">
+            <blockquote className="text-2xl md:text-3xl font-medium text-[#F5F1E3] max-w-3xl mx-auto hover:scale-110 transition-transform duration-300 overflow-hidden">
               "The hardest thing in the world to understand is income tax" - Albert Einstein
               <p className="mt-4">But RightTax makes it easy, for you.</p>
             </blockquote>
@@ -197,20 +206,22 @@ export default function Home() {
         {/* How it Works Section */}
         <section id="how-it-works" className="bg-[#F5F1E3] py-20">
           <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-[#2E073F] hover:scale-120 transition-transform">
+            <h2 className="text-4xl font-bold text-center mb-12 text-[#2E073F] hover:scale-110 transition-transform duration-300 overflow-hidden">
               How it Works
             </h2>
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden animate-fade-in">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/tax-consultation-process.jpg"
                   alt="Tax consultation process"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="space-y-8">
-                <h3 className="text-2xl font-bold text-[#2E073F]">Transforming Your Tax Experience</h3>
+                <div className="overflow-hidden">
+                  <h3 className="text-2xl font-bold text-[#2E073F]">Transforming Your Tax Experience</h3>
+                </div>
                 <ol className="space-y-6">
                   {[
                     "Easy Access: Log in to your secure account to get started.",
@@ -219,18 +230,18 @@ export default function Home() {
                     "Get Clear Answers: We'll provide you with clear, concise answers and guidance with minimum time.",
                     "Your Satisfaction is Our Priority: We'll work with you until you're confident that your tax needs are met.",
                   ].map((step, index) => (
-                    <li key={index} className="flex gap-4 items-start group">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold group-hover:bg-[#682bd7] transition-colors">
+                    <li key={index} className="flex gap-4 items-start">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold hover:bg-[#682bd7] transition-colors">
                         {index + 1}
                       </div>
-                      <p className="text-[#2E073F] group-hover:scale-110 transition-transform">{step}</p>
+                      <p className="text-[#2E073F]">{step}</p>
                     </li>
                   ))}
-                  <li className="flex gap-4 items-start group">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold group-hover:bg-[#682bd7] transition-colors">
+                  <li className="flex gap-4 items-start">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold hover:bg-[#682bd7] transition-colors">
                       6
                     </div>
-                    <p className="text-[#682bd7] font-medium group-hover:scale-110 transition-transform">
+                    <p className="text-[#682bd7] font-medium">
                       HELP US IMPROVE WITH YOUR FEEDBACK
                     </p>
                   </li>
@@ -243,7 +254,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="bg-[#2E073F] py-20">
           <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-[#F5F1E3] hover:scale-120 transition-transform">
+            <h2 className="text-4xl font-bold text-center mb-12 text-[#F5F1E3] hover:scale-110 transition-transform duration-300 overflow-hidden">
               Testimonials
             </h2>
             <div className="max-w-3xl mx-auto text-center">
@@ -258,7 +269,7 @@ export default function Home() {
         {/* Contact Us Section */}
         <section id="contact" className="bg-[#F5F1E3] py-20">
           <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-[#682bd7] hover:text-[#2E073F] hover:scale-120 transition-all">
+            <h2 className="text-4xl font-bold text-center mb-12 text-[#682bd7] hover:text-[#2E073F] hover:scale-110 transition-transform duration-300 overflow-hidden">
               Contact Us
             </h2>
             <div className="grid md:grid-cols-2 gap-12">
@@ -331,10 +342,10 @@ export default function Home() {
         <div className="container text-center text-[#F5F1E3]">
           <p>© {new Date().getFullYear()} RightTax. All rights reserved.</p>
           <div className="flex justify-center gap-4 mt-4">
-            <Link href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
+            <Link href="/privacy-policy" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
+            <Link href="/terms-of-service" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
               Terms of Service
             </Link>
           </div>
