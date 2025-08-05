@@ -1,8 +1,22 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - PurpleTax",
+  description: "Learn about how PurpleTax collects, uses, and protects your personal information. Our privacy policy ensures your data security and transparency in our tax consultation services.",
+  keywords: "privacy policy, data protection, personal information, tax consultation privacy, PurpleTax privacy",
+  openGraph: {
+    title: "Privacy Policy - PurpleTax",
+    description: "Learn about how PurpleTax collects, uses, and protects your personal information. Our privacy policy ensures your data security and transparency in our tax consultation services.",
+    url: 'https://purpletax.com/privacy-policy',
+  },
+  twitter: {
+    title: "Privacy Policy - PurpleTax",
+    description: "Learn about how PurpleTax collects, uses, and protects your personal information. Our privacy policy ensures your data security and transparency in our tax consultation services.",
+  },
+}
 
 export default function PrivacyPolicyPage() {
   return (

@@ -1,8 +1,22 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+export const metadata: Metadata = {
+  title: "Terms of Service - PurpleTax",
+  description: "Read PurpleTax terms of service and user agreement. Learn about our tax consultation services, user responsibilities, payment terms, and service conditions.",
+  keywords: "terms of service, user agreement, tax consultation terms, PurpleTax terms, service conditions",
+  openGraph: {
+    title: "Terms of Service - PurpleTax",
+    description: "Read PurpleTax terms of service and user agreement. Learn about our tax consultation services, user responsibilities, payment terms, and service conditions.",
+    url: 'https://purpletax.com/terms-of-service',
+  },
+  twitter: {
+    title: "Terms of Service - PurpleTax",
+    description: "Read PurpleTax terms of service and user agreement. Learn about our tax consultation services, user responsibilities, payment terms, and service conditions.",
+  },
+}
 
 export default function TermsOfServicePage() {
   return (

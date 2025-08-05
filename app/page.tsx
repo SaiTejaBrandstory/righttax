@@ -53,9 +53,19 @@ export default function Home() {
       await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
       
       // Open WhatsApp with the form data
-      const whatsappMessage = `Hello! I'm ${formData.name} (${formData.email}). ${formData.message}`
+      const whatsappMessage = `PurpleTax Contact Form
+--------------------------
+
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+
+--------------------------
+Sent from PurpleTax website`
       const encodedMessage = encodeURIComponent(whatsappMessage)
-      window.open(`https://wa.me/919985263698?text=${encodedMessage}`, '_blank')
+      window.open(`https://wa.me/917404596409?text=${encodedMessage}`, '_blank')
       
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
