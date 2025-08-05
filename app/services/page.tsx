@@ -65,7 +65,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold text-center mb-8 text-[#010101]">Our Approach</h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-center text-gray-700 mb-6">
-              At RightTax, we believe in a client-centered approach to tax consultation. We take the time to understand
+                              At PurpleTax, we believe in a client-centered approach to tax consultation. We take the time to understand
               your unique financial situation and provide tailored solutions that meet your specific needs.
             </p>
             <p className="text-center text-gray-700">

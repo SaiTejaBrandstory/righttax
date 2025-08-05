@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RightTax - Tailored Tax Solutions",
+  title: "PurpleTax - Tailored Tax Solutions",
   description: "Professional tax consultation services for individuals and businesses",
     generator: 'v0.dev'
 }

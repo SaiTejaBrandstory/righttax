@@ -11,7 +11,7 @@ export default function TermsOfServicePage() {
       <header className="sticky top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#682bd7]">RightTax</span>
+            <span className="text-xl font-bold text-[#682bd7]">PurpleTax</span>
           </Link>
           <Link href="/">
             <Button className="bg-[#2E073F] text-[#F5F1E3] hover:bg-[#3D8F6A] hover:text-white transition-colors">
@@ -32,7 +32,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#682bd7]">1. Acceptance of Terms</h2>
               <p className="text-[#2E073F] leading-relaxed">
-                By accessing and using RightTax's tax consultation services, you accept and agree to be bound by 
+                By accessing and using PurpleTax's tax consultation services, you accept and agree to be bound by 
                 the terms and provision of this agreement. If you do not agree to abide by the above, please 
                 do not use this service.
               </p>
@@ -41,7 +41,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#682bd7]">2. Description of Service</h2>
               <p className="text-[#2E073F] leading-relaxed">
-                RightTax provides tax consultation services including but not limited to:
+                PurpleTax provides tax consultation services including but not limited to:
               </p>
               <ul className="list-disc list-inside space-y-2 text-[#2E073F] ml-4">
                 <li>Income tax planning and optimization advice</li>
@@ -102,7 +102,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-bold text-[#682bd7]">6. Intellectual Property</h2>
               <p className="text-[#2E073F] leading-relaxed">
                 All content, features, and functionality of our service, including but not limited to text, 
-                graphics, logos, and software, are owned by RightTax and are protected by copyright, 
+                graphics, logos, and software, are owned by PurpleTax and are protected by copyright, 
                 trademark, and other intellectual property laws.
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#682bd7]">7. Limitation of Liability</h2>
               <p className="text-[#2E073F] leading-relaxed">
-                RightTax shall not be liable for any indirect, incidental, special, consequential, or 
+                PurpleTax shall not be liable for any indirect, incidental, special, consequential, or 
                 punitive damages, including but not limited to loss of profits, data, or use, arising out 
                 of or relating to your use of our services.
               </p>
@@ -119,7 +119,7 @@ export default function TermsOfServicePage() {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-[#682bd7]">8. Indemnification</h2>
               <p className="text-[#2E073F] leading-relaxed">
-                You agree to indemnify and hold harmless RightTax, its officers, directors, employees, 
+                You agree to indemnify and hold harmless PurpleTax, its officers, directors, employees, 
                 and agents from and against any claims, damages, obligations, losses, liabilities, costs, 
                 or debt arising from your use of our services.
               </p>
@@ -137,7 +137,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-bold text-[#682bd7]">10. Governing Law</h2>
               <p className="text-[#2E073F] leading-relaxed">
                 These Terms shall be interpreted and governed by the laws of the jurisdiction in which 
-                RightTax operates, without regard to its conflict of law provisions.
+                PurpleTax operates, without regard to its conflict of law provisions.
               </p>
             </div>
 
@@ -155,9 +155,13 @@ export default function TermsOfServicePage() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="bg-[#F5F1E3] p-4 rounded-lg">
-                <p className="text-[#2E073F] font-medium">Email: legal@righttax.com</p>
-                <p className="text-[#2E073F] font-medium">Phone: +91 (80) 1234-5678</p>
-                <p className="text-[#2E073F] font-medium">Address: 123 MG Road, Koramangala, Bengaluru 560034</p>
+                <p className="text-[#2E073F] font-medium">
+                  <a href="mailto:purpletaxcare@gmail.com" className="text-[#2E073F] hover:text-[#2e073f] transition-colors">Mail: purpletaxcare@gmail.com</a>
+                </p>
+                <p className="text-[#2E073F] font-medium">
+                  <a href="tel:+917404596409" className="text-[#2E073F] hover:text-[#2e073f] transition-colors">Call: +91 74045 96409</a>
+                </p>
+                <p className="text-[#2E073F] font-medium">Hours: MON-SUN: 24 X 7</p>
               </div>
             </div>
 
@@ -168,7 +172,7 @@ export default function TermsOfServicePage() {
 
       <footer className="bg-[#2E073F] py-8 mt-20">
         <div className="container text-center text-[#F5F1E3]">
-          <p>© {new Date().getFullYear()} RightTax. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PurpleTax. All rights reserved.</p>
           <div className="flex justify-center gap-4 mt-4">
             <Link href="/privacy-policy" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
               Privacy Policy

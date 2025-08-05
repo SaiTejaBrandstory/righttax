@@ -46,7 +46,7 @@ export default function TestimonialsPage() {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-6">Join Our Satisfied Clients</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Experience the RightTax difference and see why our clients are consistently impressed with our services.
+                            Experience the PurpleTax difference and see why our clients are consistently impressed with our services.
           </p>
           <div className="flex justify-center">
             <div className="flex items-center space-x-2">

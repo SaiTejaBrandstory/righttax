@@ -43,19 +43,15 @@ export default function ContactPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-[#3D8F6A]" />
-                    <span className="text-[#FEFCFF]">+1 (555) 123-4567</span>
+                    <a href="tel:+917404596409" className="text-[#FEFCFF] hover:text-[#2e073f] transition-colors">Call: +91 74045 96409</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-[#3D8F6A]" />
-                    <span className="text-[#FEFCFF]">contact@righttax.com</span>
+                    <a href="mailto:purpletaxcare@gmail.com" className="text-[#FEFCFF] hover:text-[#2e073f] transition-colors">Mail: purpletaxcare@gmail.com</a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="h-5 w-5 text-[#3D8F6A]" />
-                    <span className="text-[#FEFCFF]">Mon-Fri: 9AM-5PM</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-[#3D8F6A]" />
-                    <span className="text-[#FEFCFF]">123 Tax Street, Finance City, FC 12345</span>
+                    <span className="text-[#FEFCFF]">MON-SUN: 24 X 7</span>
                   </div>
                 </div>
               </div>
@@ -63,13 +59,13 @@ export default function ContactPage() {
               <div className="bg-[#a37cf0] p-6 rounded-lg">
                 <h2 className="text-2xl font-bold mb-6 text-[#FEFCFF]">Connect With Us</h2>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">
+                  <a href="https://www.facebook.com/share/1DnGTL8poh/" target="_blank" rel="noopener noreferrer" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">
                     <Facebook className="h-6 w-6" />
                   </a>
                   <a href="#" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">
                     <Twitter className="h-6 w-6" />
                   </a>
-                  <a href="#" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">
+                  <a href="https://www.instagram.com/purple.tax/" target="_blank" rel="noopener noreferrer" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">
                     <Instagram className="h-6 w-6" />
                   </a>
                   <a href="#" className="text-[#3D8F6A] hover:text-[#FEFCFF] transition-colors">

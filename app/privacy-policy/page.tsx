@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
         <div className="container flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#682bd7]">RightTax</span>
+            <span className="text-xl font-bold text-[#682bd7]">PurpleTax</span>
           </Link>
           <Link href="/">
             <Button className="bg-[#2E073F] text-[#F5F1E3] hover:bg-[#3D8F6A] hover:text-white transition-colors">
@@ -128,9 +128,13 @@ export default function PrivacyPolicyPage() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us at:
               </p>
               <div className="bg-[#F5F1E3] p-4 rounded-lg">
-                <p className="text-[#2E073F] font-medium">Email: privacy@righttax.com</p>
-                <p className="text-[#2E073F] font-medium">Phone: +91 (80) 1234-5678</p>
-                <p className="text-[#2E073F] font-medium">Address: 123 MG Road, Koramangala, Bengaluru 560034</p>
+                <p className="text-[#2E073F] font-medium">
+                  <a href="mailto:purpletaxcare@gmail.com" className="text-[#2E073F] hover:text-[#2e073f] transition-colors">Mail: purpletaxcare@gmail.com</a>
+                </p>
+                <p className="text-[#2E073F] font-medium">
+                  <a href="tel:+917404596409" className="text-[#2E073F] hover:text-[#2e073f] transition-colors">Call: +91 74045 96409</a>
+                </p>
+                <p className="text-[#2E073F] font-medium">Hours: MON-SUN: 24 X 7</p>
               </div>
             </div>
 
@@ -141,7 +145,7 @@ export default function PrivacyPolicyPage() {
 
       <footer className="bg-[#2E073F] py-8 mt-20">
         <div className="container text-center text-[#F5F1E3]">
-          <p>© {new Date().getFullYear()} RightTax. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PurpleTax. All rights reserved.</p>
           <div className="flex justify-center gap-4 mt-4">
             <Link href="/privacy-policy" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
               Privacy Policy

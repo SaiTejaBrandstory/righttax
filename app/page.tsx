@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import {
   ArrowRight,
   CheckCircle,
@@ -25,6 +26,46 @@ import AosInit from "@/components/aos-init"
 import MobileNav from "@/components/mobile-nav"
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState('')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('')
+
+    try {
+      // For now, we'll simulate a successful submission
+      // In a real app, you'd send this to your backend or email service
+      await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API call
+      
+      // Open WhatsApp with the form data
+      const whatsappMessage = `Hello! I'm ${formData.name} (${formData.email}). ${formData.message}`
+      const encodedMessage = encodeURIComponent(whatsappMessage)
+      window.open(`https://wa.me/919985263698?text=${encodedMessage}`, '_blank')
+      
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (error) {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <AosInit />
@@ -33,7 +74,7 @@ export default function Home() {
       <header className="fixed top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
         <div className="container flex h-16 items-center justify-between">
           <Link href="#home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#682bd7]">RightTax</span>
+            <span className="text-xl font-bold text-[#682bd7]">PurpleTax</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link href="#home" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
@@ -56,8 +97,14 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-2">
-            <Button className="hidden md:inline-flex bg-[#2E073F] text-[#F5F1E3] hover:bg-[#3D8F6A] hover:text-white transition-colors">
-              Login
+            <Button 
+              className="hidden md:inline-flex bg-[#2E073F] text-[#F5F1E3] hover:bg-[#3D8F6A] hover:text-white transition-colors"
+              onClick={() => window.open('https://wa.me/917404596409', '_blank')}
+            >
+              <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              Contact
             </Button>
             <MobileNav />
           </div>
@@ -70,7 +117,7 @@ export default function Home() {
           <div className="container grid gap-8 md:grid-cols-2 items-center">
             <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
               <Image
-                src="/tax-consultation-services.jpg"
+                src="/tax-consultation-services.png"
                 alt="Tax consultation services"
                 fill
                 className="object-cover"
@@ -165,7 +212,7 @@ export default function Home() {
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
                 <Image
-                  src="/tax-professionals-at-work.jpg"
+                  src="/tax-professionals-at-work.png"
                   alt="Tax professionals at work"
                   fill
                   className="object-cover"
@@ -175,16 +222,16 @@ export default function Home() {
                 <div className="overflow-hidden">
                   <h3 className="text-2xl font-bold text-[#682bd7]">Your path to tax empowerment</h3>
                 </div>
-                <p className="text-[#2E073F]">
-                  RightTax is a tax consultation service founded by experienced tax professionals. We aim to simplify
+                <p className="text-[#2E073F] text-justify">
+                  PurpleTax is a tax consultation service founded by experienced tax professionals. We aim to simplify
                   complex tax laws and procedures, empowering individuals and businesses to make informed financial
                   decisions.
                 </p>
-                <p className="text-[#2E073F]">
-                  RightTax offers clear, accurate, and practical tax solutions through a single platform, enabling users
+                <p className="text-[#2E073F] text-justify">
+                  PurpleTax offers clear, accurate, and practical tax solutions through a single platform, enabling users
                   to get answers, understand procedures, and receive tailored expert advice.
                 </p>
-                <p className="text-[#2E073F]">
+                <p className="text-[#2E073F] text-justify">
                   Tax systems are meant to be Progressive rather than Regressive, Our Team is committed to educating
                   people, resolving tax issues efficiently, and continuously improving their services.
                 </p>
@@ -198,7 +245,7 @@ export default function Home() {
           <div className="container text-center">
             <blockquote className="text-2xl md:text-3xl font-medium text-[#F5F1E3] max-w-3xl mx-auto hover:scale-110 transition-transform duration-300 overflow-hidden">
               "The hardest thing in the world to understand is income tax" - Albert Einstein
-              <p className="mt-4">But RightTax makes it easy, for you.</p>
+              <p className="mt-4">But PurpleTax makes it easy, for you.</p>
             </blockquote>
           </div>
         </section>
@@ -212,7 +259,7 @@ export default function Home() {
             <div className="grid gap-8 md:grid-cols-2 items-center">
               <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden animate-fade-in">
                 <Image
-                  src="/tax-consultation-process.jpg"
+                  src="/tax-consultation-process.png"
                   alt="Tax consultation process"
                   fill
                   className="object-cover"
@@ -230,18 +277,18 @@ export default function Home() {
                     "Get Clear Answers: We'll provide you with clear, concise answers and guidance with minimum time.",
                     "Your Satisfaction is Our Priority: We'll work with you until you're confident that your tax needs are met.",
                   ].map((step, index) => (
-                    <li key={index} className="flex gap-4 items-start">
+                    <li key={index} className="flex gap-4 items-baseline">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold hover:bg-[#682bd7] transition-colors">
                         {index + 1}
                       </div>
-                      <p className="text-[#2E073F]">{step}</p>
+                      <p className="text-[#2E073F] text-justify">{step}</p>
                     </li>
                   ))}
-                  <li className="flex gap-4 items-start">
+                  <li className="flex gap-4 items-baseline">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#2D6A4F] text-white flex items-center justify-center font-bold hover:bg-[#682bd7] transition-colors">
                       6
                     </div>
-                    <p className="text-[#682bd7] font-medium">
+                    <p className="text-[#682bd7] font-medium text-justify">
                       HELP US IMPROVE WITH YOUR FEEDBACK
                     </p>
                   </li>
@@ -275,26 +322,63 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-[#682bd7]">Get in Touch</h3>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-gray-700">
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" className="border-[#682bd7]" />
+                    <Input 
+                      id="name" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      placeholder="Your name" 
+                      className="border-[#682bd7]" 
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-gray-700">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" className="border-[#682bd7]" />
+                    <Input 
+                      id="email" 
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Your email" 
+                      className="border-[#682bd7]" 
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-gray-700">
                       Message
                     </label>
-                    <Textarea id="message" placeholder="Your message" className="border-[#682bd7]" />
+                    <Textarea 
+                      id="message" 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="Your message" 
+                      className="border-[#682bd7]" 
+                      required
+                    />
                   </div>
-                  <Button className="w-full bg-[#3D8F6A] hover:bg-[#2D6A4F] text-white">Send Message</Button>
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#3D8F6A] hover:bg-[#2D6A4F] text-white disabled:opacity-50"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                  {submitStatus === 'success' && (
+                    <p className="text-green-600 text-sm text-center">Message sent successfully! Check WhatsApp.</p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="text-red-600 text-sm text-center">Something went wrong. Please try again.</p>
+                  )}
                 </form>
               </div>
               <div className="space-y-8">
@@ -303,28 +387,28 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Phone className="h-5 w-5 text-[#F5F1E3]" />
-                      <span className="text-[#F5F1E3]">+1 (555) 123-4567</span>
+                      <a href="tel:+917404596409" className="text-[#F5F1E3] hover:text-[#2e073f] transition-colors">Call: +91 74045 96409</a>
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail className="h-5 w-5 text-[#F5F1E3]" />
-                      <span className="text-[#F5F1E3]">contact@righttax.com</span>
+                      <a href="mailto:purpletaxcare@gmail.com" className="text-[#F5F1E3] hover:text-[#2e073f] transition-colors">Mail: purpletaxcare@gmail.com</a>
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="h-5 w-5 text-[#F5F1E3]" />
-                      <span className="text-[#F5F1E3]">Mon-Fri: 9AM-5PM</span>
+                      <span className="text-[#F5F1E3]">MON-SUN: 24 X 7</span>
                     </div>
                   </div>
                 </div>
                 <div className="bg-[#682bd7] p-6 rounded-lg">
                   <h3 className="text-2xl font-bold mb-6 text-[#F5F1E3]">Connect With Us</h3>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
+                    <a href="https://www.facebook.com/share/1DnGTL8poh/" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
                       <Facebook className="h-6 w-6" />
                     </a>
                     <a href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
                       <Twitter className="h-6 w-6" />
                     </a>
-                    <a href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
+                    <a href="https://www.instagram.com/purple.tax/" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
                       <Instagram className="h-6 w-6" />
                     </a>
                     <a href="#" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
@@ -340,7 +424,7 @@ export default function Home() {
 
       <footer className="bg-[#2E073F] py-8">
         <div className="container text-center text-[#F5F1E3]">
-          <p>© {new Date().getFullYear()} RightTax. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} PurpleTax. All rights reserved.</p>
           <div className="flex justify-center gap-4 mt-4">
             <Link href="/privacy-policy" className="text-[#F5F1E3] hover:text-[#3D8F6A] transition-colors">
               Privacy Policy

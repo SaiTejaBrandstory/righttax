@@ -22,12 +22,12 @@ export default function WhyUsPage() {
                 Your path to tax empowerment.
               </h2>
               <p className="text-[#010101] group-hover:scale-110 transition-transform duration-300">
-                <span className="text-[#682bd7] font-semibold">RightTax</span> is a tax consultation service founded by
+                <span className="text-[#682bd7] font-semibold">PurpleTax</span> is a tax consultation service founded by
                 experienced tax professionals. We aim to simplify complex tax laws and procedures, empowering
                 individuals and businesses to make informed financial decisions.
               </p>
               <p className="text-[#010101] group-hover:scale-110 transition-transform duration-300">
-                <span className="text-[#682bd7] font-semibold">RightTax</span> offers clear, accurate, and practical tax
+                <span className="text-[#682bd7] font-semibold">PurpleTax</span> offers clear, accurate, and practical tax
                 solutions through a single platform, enabling users to get answers, understand procedures, and receive
                 tailored expert advice.
               </p>

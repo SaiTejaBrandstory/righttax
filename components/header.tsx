@@ -26,7 +26,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-[#682bd7]">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-[#FEFCFF]">RightTax</span>
+                      <span className="text-xl font-bold text-[#FEFCFF]">PurpleTax</span>
         </Link>
 
         {/* Mobile menu button */}
