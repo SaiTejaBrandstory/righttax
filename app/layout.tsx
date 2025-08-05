@@ -35,7 +35,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PurpleTax - Professional Tax Consultation Services",
     description: "Get expert tax consultation services from PurpleTax. We help with income tax planning, tax notices, refunds, NRI tax issues, and personal consultation. 24/7 support available.",
-    url: 'https://purpletax.in',
     siteName: 'PurpleTax',
     locale: 'en_US',
     type: 'website',

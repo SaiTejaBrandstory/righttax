@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terms of Service - PurpleTax",
     description: "Read PurpleTax terms of service and user agreement. Learn about our tax consultation services, user responsibilities, payment terms, and service conditions.",
-    url: 'https://purpletax.com/terms-of-service',
   },
   twitter: {
     title: "Terms of Service - PurpleTax",

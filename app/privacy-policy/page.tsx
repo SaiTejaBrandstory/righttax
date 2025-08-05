@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy - PurpleTax",
     description: "Learn about how PurpleTax collects, uses, and protects your personal information. Our privacy policy ensures your data security and transparency in our tax consultation services.",
-    url: 'https://purpletax.com/privacy-policy',
   },
   twitter: {
     title: "Privacy Policy - PurpleTax",
