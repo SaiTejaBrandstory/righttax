@@ -81,28 +81,28 @@ Sent from PurpleTax website`
       <AosInit />
 
       {/* Header & Navigation */}
-      <header className="fixed top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-50">
+              <header className="fixed top-0 z-50 w-full border-b bg-[#682bd7] bg-opacity-95 shadow-lg">
         <div className="container flex h-16 items-center justify-between">
           <Link href="#home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#682bd7]">PurpleTax</span>
+            <span className="text-xl font-bold text-white">PurpleTax</span>
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="#home" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#home" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               Home
             </Link>
-            <Link href="#services" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#services" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               Services
             </Link>
-            <Link href="#why-us" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#why-us" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               Why Us
             </Link>
-            <Link href="#how-it-works" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#how-it-works" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               How it Works
             </Link>
-            <Link href="#testimonials" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#testimonials" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               Testimonials
             </Link>
-            <Link href="#contact" className="text-[#2E073F] hover:text-[#F5F1E3] hover:scale-120 transition-all">
+            <Link href="#contact" className="text-white hover:text-[#F5F1E3] hover:scale-120 transition-all">
               Contact Us
             </Link>
           </nav>

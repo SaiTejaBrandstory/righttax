@@ -17,22 +17,42 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://purpletax.com'),
+  metadataBase: new URL('https://purpletax.in'),
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: "PurpleTax - Professional Tax Consultation Services",
     description: "Get expert tax consultation services from PurpleTax. We help with income tax planning, tax notices, refunds, NRI tax issues, and personal consultation. 24/7 support available.",
-    url: 'https://purpletax.com',
+    url: 'https://purpletax.in',
     siteName: 'PurpleTax',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'PurpleTax - Professional Tax Consultation Services',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "PurpleTax - Professional Tax Consultation Services",
     description: "Get expert tax consultation services from PurpleTax. We help with income tax planning, tax notices, refunds, NRI tax issues, and personal consultation. 24/7 support available.",
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
@@ -45,6 +65,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+  },
 }
 
 export default function RootLayout({
@@ -54,6 +79,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="theme-color" content="#682bd7" />
+        <meta name="msapplication-TileColor" content="#682bd7" />
+        <meta name="msapplication-TileImage" content="/logo.png" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

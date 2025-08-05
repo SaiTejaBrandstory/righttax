@@ -18,53 +18,59 @@ export default function MobileNav() {
 
   return (
     <div className="md:hidden">
-      <Button variant="ghost" size="icon" onClick={toggleMenu} className="text-[#2E073F]">
+      <Button variant="ghost" size="icon" onClick={toggleMenu} className="text-white">
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         <span className="sr-only">Toggle menu</span>
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 top-16 z-50 bg-[#682bd7] bg-opacity-95 flex flex-col p-6">
+        <div className="fixed inset-0 top-16 z-[9999] bg-[#682bd7] bg-opacity-95 flex flex-col p-6 shadow-xl" style={{backgroundColor: '#682bd7', opacity: 0.95}}>
           <nav className="flex flex-col space-y-6">
             <Link
               href="#home"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               Home
             </Link>
             <Link
               href="#services"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               Services
             </Link>
             <Link
               href="#why-us"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               Why Us
             </Link>
             <Link
               href="#how-it-works"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               How it Works
             </Link>
             <Link
               href="#testimonials"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               Testimonials
             </Link>
             <Link
               href="#contact"
               onClick={closeMenu}
-              className="text-[#F5F1E3] text-xl font-medium hover:text-[#F5F1E3] hover:scale-110 transition-all"
+              className="text-white text-xl font-bold hover:text-[#F5F1E3]"
+              style={{color: '#FFFFFF'}}
             >
               Contact Us
             </Link>
