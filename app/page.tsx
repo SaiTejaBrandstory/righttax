@@ -130,7 +130,7 @@ Sent from PurpleTax website`
                 src="/tax-consultation-services.png"
                 alt="Tax consultation services"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
@@ -225,7 +225,7 @@ Sent from PurpleTax website`
                   src="/tax-professionals-at-work.png"
                   alt="Tax professionals at work"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="space-y-6">
@@ -272,7 +272,7 @@ Sent from PurpleTax website`
                   src="/tax-consultation-process.png"
                   alt="Tax consultation process"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="space-y-8">

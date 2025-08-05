@@ -22,7 +22,7 @@ export default function HowItWorksPage() {
                 src="/placeholder.svg?height=500&width=500"
                 alt="Tax consultation process"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="space-y-8">

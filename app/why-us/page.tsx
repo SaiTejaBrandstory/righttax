@@ -14,7 +14,7 @@ export default function WhyUsPage() {
                 src="/placeholder.svg?height=500&width=500"
                 alt="Tax professionals at work"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="space-y-6 group">
