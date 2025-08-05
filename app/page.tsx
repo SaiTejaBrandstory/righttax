@@ -335,7 +335,7 @@ Sent from PurpleTax website`
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                      Name
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <Input 
                       id="name" 
@@ -349,7 +349,7 @@ Sent from PurpleTax website`
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-gray-700">
-                      Email
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <Input 
                       id="email" 
@@ -364,7 +364,7 @@ Sent from PurpleTax website`
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-sm font-medium text-gray-700">
-                      Message
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <Textarea 
                       id="message" 
